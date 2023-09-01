@@ -6,20 +6,8 @@ using UnityEngine.SceneManagement;
 
 public class MenuManager : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    //Scene Change blocks
-    public void playbtn(string SceneName)
+    //Scene Change
+    public void SceneLoader(string SceneName)
     {
         SceneManager.LoadScene(SceneName);
     }
