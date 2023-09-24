@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class PlayerMovement : MonoBehaviour
 {
-    public FixedJoystick joystick;
     public float vel = 50;
     private float moveH,moveV;
+    public static int colectables;
     // Start is called before the first frame update
     void Start()
     {
@@ -21,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     void PlayerMove()
     {
-        moveH = joystick.Horizontal;
-        moveV = joystick.Vertical;
+        moveH = Input.GetAxis("Horizontal");
+        moveV = Input.GetAxis("Vertical");
 
         Vector2 playerDirection = new Vector2(moveH,moveV);
 
@@ -30,5 +30,17 @@ public class PlayerMovement : MonoBehaviour
         {
             transform.Translate(playerDirection * vel);
         }
+    }
+
+    //Player Colections
+
+    private void OnTriggerEnter2D(Collider2D other) 
+    {
+        if(other.gameObject.CompareTag("Letter"))
+        {
+            other.gameObject.SetActive(false);
+            colectables++;
+        }
+        Debug.Log("Colected!!!");
     }
 }
