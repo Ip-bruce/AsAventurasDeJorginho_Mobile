@@ -9,6 +9,7 @@ public class MenuManager : MonoBehaviour
     //Scene Change
     public void SceneLoader(string SceneName)
     {
+        
         SceneManager.LoadScene(SceneName);
     }
 }

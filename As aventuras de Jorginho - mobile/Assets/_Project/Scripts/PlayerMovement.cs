@@ -9,19 +9,12 @@ public class PlayerMovement : MonoBehaviour
     public Animator anim;
     public static int colectables;
     private bool walking = false;
-    //public SpriteRenderer playerSprite;
-    //public Sprite[] spriteList ;
-    // Start is called before the first frame update
-    void Start()
-    {
-        //playerSprite = GetComponent<SpriteRenderer>();
-    }
+    public AudioSource colected;
 
-    // Update is called once per frame
+
     void FixedUpdate()
     {
         PlayerMove();
-       // PlayerAnimator();
     }
 
     void PlayerMove()
@@ -54,24 +47,10 @@ public class PlayerMovement : MonoBehaviour
         if(other.gameObject.CompareTag("Letter"))
         {
             other.gameObject.SetActive(false);
+            colected.Play();
             colectables++;
         }
         Debug.Log("Colected!!!");
     }
 
-    // public void PlayerAnimator()
-    // {
-    //     if(moveH >= 1)
-    //     {
-    //         playerSprite.sprite = spriteList[1];
-    //     }
-    //     if(moveH == 0)
-    //     {
-    //         playerSprite.sprite = spriteList[0];
-    //     }
-    //     if(moveH < 0)
-    //     {
-    //         playerSprite.sprite = spriteList[2];
-    //     }
-    // }
 }
