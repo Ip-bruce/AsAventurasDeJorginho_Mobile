@@ -22,7 +22,11 @@ public class ObstacleSystem : MonoBehaviour
 
     public void StartPosition()
     {
-        Vector2 pos = new Vector2(-5,6);
-        obstacles[0].transform.position = pos;
+        for (int i = 0; i < obstacles.Length; i++)
+        {
+            Vector2 pos = new Vector2(Random.Range(-5,5),Random.Range(6,8));
+            obstacles[i].transform.position = pos;
+            
+        }
     }
 }

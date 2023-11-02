@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
@@ -10,6 +11,23 @@ public class PlayerMovement : MonoBehaviour
     public static int colectables;
     private bool walking = false;
     public AudioSource colected;
+
+    //Player Health stats
+    public int PlayerLife = 2;
+    public GameObject[] LifeSprite;
+
+    
+    void Start()
+    {
+        //Player Health
+        PlayerLife = 2;
+        //Life Sprite
+        int i;
+        for(i = 0; i < LifeSprite.Length; i++)
+        {
+            LifeSprite[i].SetActive(true);
+        }    
+    }
 
 
     void FixedUpdate()
@@ -34,7 +52,6 @@ public class PlayerMovement : MonoBehaviour
             walking = false;
         }
         
-
         anim.SetFloat("Horizontal",moveH);
         anim.SetFloat("vertical",moveV);
         anim.SetBool("isWalking",walking);
@@ -50,7 +67,28 @@ public class PlayerMovement : MonoBehaviour
             colected.Play();
             colectables++;
         }
+        if(other.gameObject.CompareTag("Obstacle"))
+        {
+            PlayerHealth();
+        }
         Debug.Log("Colected!!!");
+    }
+
+    private void PlayerHealth()
+    {
+        Debug.Log("Health");
+
+        if(PlayerLife == 2) LifeSprite[2].SetActive(false);
+        if(PlayerLife == 1) LifeSprite[1].SetActive(false);
+        if(PlayerLife == 0)
+        {
+            LifeSprite[0].SetActive(false);
+            SceneManager.LoadScene("Level1"); //TODO: Change the String for the current scene;
+        }
+        
+        PlayerLife--;
+
+       
     }
 
 }

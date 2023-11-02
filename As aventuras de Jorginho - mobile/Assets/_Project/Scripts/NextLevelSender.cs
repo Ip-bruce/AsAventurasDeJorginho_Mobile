@@ -6,23 +6,10 @@ using UnityEngine.SceneManagement;
 public class NextLevelSender : MonoBehaviour
 {
     public string nextLevelName;
-
     public LevelManager levelManager;
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
-
-    
     void OnTriggerEnter2D(Collider2D other)
     {
-        levelManager.NextLevel(nextLevelName);    
+        if(other.gameObject.CompareTag("Player")) levelManager.NextLevel(nextLevelName);    
     }
 }

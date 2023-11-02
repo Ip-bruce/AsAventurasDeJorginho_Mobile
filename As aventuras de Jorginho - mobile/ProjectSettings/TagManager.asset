@@ -6,6 +6,8 @@ TagManager:
   tags:
   - Letter
   - Door
+  - LevelCollider
+  - Obstacle
   layers:
   - Default
   - TransparentFX
