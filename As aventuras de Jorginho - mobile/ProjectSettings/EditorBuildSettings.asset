@@ -20,4 +20,19 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Level2.unity
     guid: 51a9fae67786a88448c80e4e01dbc679
+  - enabled: 1
+    path: Assets/Scenes/Perdeu1.unity
+    guid: fb1fe1ddb38ec37449a0f6ab4de9b9ee
+  - enabled: 1
+    path: Assets/Scenes/Parabens2.unity
+    guid: 812c1ecb01fe39941b0084ad7d9719b1
+  - enabled: 1
+    path: Assets/Scenes/Parabens3.unity
+    guid: de1a417bc6fedd34bb3af5a109ee2265
+  - enabled: 1
+    path: Assets/Scenes/Parabens1.unity
+    guid: e2333fef65da8f54e83e7e9130f737c8
+  - enabled: 1
+    path: Assets/Scenes/Level3.unity
+    guid: 37c22fc2183bb1441aeecbd086cf989a
   m_configObjects: {}
