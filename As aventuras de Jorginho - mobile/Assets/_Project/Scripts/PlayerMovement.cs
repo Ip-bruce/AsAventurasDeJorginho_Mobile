@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     public static int colectables;
     private bool walking = false;
     public AudioSource colected;
+    public string LoseLevel;
 
     //Player Health stats
     public int PlayerLife = 2;
@@ -83,7 +84,7 @@ public class PlayerMovement : MonoBehaviour
         if(PlayerLife == 0)
         {
             LifeSprite[0].SetActive(false);
-            SceneManager.LoadScene("Level1"); //TODO: Change the String for the current scene;
+            SceneManager.LoadScene(LoseLevel); //TODO: Change the String for the current scene;
         }
         
         PlayerLife--;
