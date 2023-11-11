@@ -5,6 +5,7 @@ using UnityEngine;
 public class Obstacle : MonoBehaviour
 {
     public float obstacleVel;
+    public AudioSource Hit;
     // Start is called before the first frame update
     void Start()
     {
@@ -33,7 +34,7 @@ public class Obstacle : MonoBehaviour
         {
             Vector2 pos = new Vector2(Random.Range(-6,6),Random.Range(6,10));
             transform.position = pos;
-            Debug.Log("Hit no personagem");
+            Hit.Play();
         }
         else
         {
