@@ -1688,7 +1688,7 @@ MonoBehaviour:
   vel: 0.05
   anim: {fileID: 965899483}
   colected: {fileID: 2070381100}
-  LoseLevel: Perdeu1
+  LoseLevel: Perdeu2
   PlayerLife: 3
   LifeSprite:
   - {fileID: 2031637338}
