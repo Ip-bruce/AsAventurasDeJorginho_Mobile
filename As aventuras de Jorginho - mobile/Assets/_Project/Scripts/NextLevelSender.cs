@@ -12,4 +12,9 @@ public class NextLevelSender : MonoBehaviour
     {
         if(other.gameObject.CompareTag("Player")) levelManager.NextLevel(nextLevelName);    
     }
+
+    public void NextLevel()
+    {
+        levelManager.NextLevel(nextLevelName);
+    }
 }

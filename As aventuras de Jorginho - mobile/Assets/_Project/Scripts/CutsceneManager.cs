@@ -18,24 +18,30 @@ public class CutsceneManager : MonoBehaviour
 
     //Image Object reference to show the images
     [SerializeField]
-    private Image imageShow;
+    private Image imagePlaceholder;
 
+    [SerializeField]
+    private GameObject button;
 
     //Private variables - Timer
     private bool isInScene = true;
     private float timer;
-    private int index = 0 ;
+    private int index = 0;
 
     // Start is called before the first frame update
     void Start()
     {
         isInScene = true;
+        button.SetActive(false);
+        imagePlaceholder.sprite = images[index];
     }
 
 
     void FixedUpdate()
     {
-        if(isInScene)
+    
+
+        if (isInScene)
         {
             timer += Time.deltaTime;
             Debug.Log("time is:" + timer );
@@ -44,13 +50,13 @@ public class CutsceneManager : MonoBehaviour
         if(timer >= TimeInScene)
         {
             timer = 0;
-            imageShow.sprite = images[index];
+            imagePlaceholder.sprite = images[index];
             
             if(index == images.Length - 1 )
             {
-                Debug.Log("Acabbou as images");
+                Debug.Log("Acabou as images");
                 isInScene = false;
-                
+                button.SetActive(true);
             }
             else
             {
