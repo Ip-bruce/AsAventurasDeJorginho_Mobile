@@ -9,13 +9,17 @@ public class CardsManager : MonoBehaviour
     public RectTransform [] dragableCards;
     public GameObject [] displayCards;
     public RectTransform[] dragableCardsHolder;
-    [SerializeField] CardDrop cardDrop;
+    public CardDrop cardDrop;
+    private int points = 0;
 
+    private GameObject currentDisplayCard;
 
     private void Start() 
     {
         ShowCards();    
         DisplayCards();
+
+        cardDrop = GetComponent<CardDrop>();
     }
 
     private void Update()
@@ -24,9 +28,16 @@ public class CardsManager : MonoBehaviour
         // {
         //     ShowCards();
         // }
+
+        //Win Condition
+        if(points == 5)
+        {
+            Debug.Log("Gahou!!!");
+        }
+
     }
 
-
+    //Show and organize the Dragable Cards
     private void ShowCards()
     {
          int dragableCardsQuantity = dragableCards.Length - 1; 
@@ -38,14 +49,43 @@ public class CardsManager : MonoBehaviour
     }
 
     //Void responsable for Display the cards with the signs
-    private void DisplayCards()
+    public void DisplayCards()
     {
-        displayCards[Random.Range(0,4)].SetActive(true);
+        for(int i = 0; i<= displayCards.Length - 1; i++)
+        {
+            currentDisplayCard = displayCards[Random.Range(0,displayCards.Length - 1)];
+            if(currentDisplayCard != null) currentDisplayCard.SetActive(true);
+
+            if(i == 4) i = 0;   
+        }
+
+        // (displayCards[Random.Range(0,displayCards.Length - 1)] != null) 
+        // displayCards[Random.Range(0,displayCards.Length - 1)].SetActive(true);
     }
 
-    public static void CheckCard()
+
+    public void CheckCard(string currentCardTag, GameObject currentCard)
     {
-        
+
+        Debug.Log("Check Card: " + currentCardTag);
+
+         int dragableCardsQuantity = dragableCards.Length - 1; 
+
+        for(int i = 0; i <= dragableCardsQuantity; i++)
+        {
+            if(displayCards[i].activeSelf)
+            {
+                string displayCardsTag = displayCards[i].tag; 
+                if( displayCardsTag == currentCardTag)
+                {
+                    Destroy(currentCard);
+                    Destroy(displayCards[i]);
+                    ShowCards();
+                    DisplayCards();
+                    points++;
+                }
+            }
+        }
     }
 
 }
