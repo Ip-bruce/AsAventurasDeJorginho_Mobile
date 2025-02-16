@@ -1,5 +1,6 @@
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 //Manages the all the logic of the cards
 public class CardsManager : MonoBehaviour
@@ -10,7 +11,10 @@ public class CardsManager : MonoBehaviour
     public List<int> numbers;
     public RectTransform[] dragableCardsHolder;
     public CardDrop cardDrop;
-    private int points = 0;
+    [SerializeField] int points = 0;
+    [SerializeField] ScoreManager scoreManager;
+    //Panels
+    public GameObject pointPanel;
 
 
 
@@ -19,26 +23,19 @@ public class CardsManager : MonoBehaviour
     private void Start()
     {
 
-        DisplayCards();
-        ShowCards();
+        //DisplayCards();
+        //ShowCards();
 
         cardDrop = GetComponent<CardDrop>();
     }
 
     private void Update()
-    {
-        // if(Input.GetKey(KeyCode.A))
-        // {
-        //     ShowCards();
-        // }
-
-        
-       
+    {       
 
     }
 
     //Show and organize the Dragable Cards
-    private void ShowCards()
+    public void ShowCards()
     {
         int dragableCardsQuantity = dragableCards.Length - 1;
 
@@ -55,8 +52,6 @@ public class CardsManager : MonoBehaviour
         {
             int theNumber = numbers[Random.Range(0, numbers.Count)];
             numbers.Remove(theNumber);
-            
-            //currentDisplayCard = displayCards[Random.Range(0,displayCards.Count)];
 
             currentDisplayCard = displayCards[theNumber];
             
@@ -74,7 +69,7 @@ public class CardsManager : MonoBehaviour
         }
         else
         {
-            Debug.LogError("Ganhou !!!!!");
+           Score(points);
         }
 
 
@@ -84,29 +79,56 @@ public class CardsManager : MonoBehaviour
     }
 
 
-    public void CheckCard(string currentCardTag, GameObject currentCard)
+    public void Score(int points)
     {
-
-        int dragableCardsQuantity = dragableCards.Length - 1;
-
-        for (int i = 0; i <= dragableCardsQuantity; i++)
+        if (scoreManager != null && scoreManager.scoreImages.Count > points && pointPanel != null)
         {
-            if (displayCards[i].activeSelf)
-            {
-                string displayCardsTag = displayCards[i].tag;
-                if (displayCardsTag == currentCardTag)
-                {
+            Image pointPanelImage = pointPanel.GetComponent<Image>();
 
-                    currentCard.SetActive(false);
-                    displayCards[i].SetActive(false);
-                    //displayCards.Remove(displayCards[i]);
-                    //Destroy(displayCards[i]);
-                    ShowCards();
-                    DisplayCards();
-                    points++;
-                }
+            if (pointPanelImage != null)
+            {
+                pointPanelImage.sprite = scoreManager.scoreImages[points];
+                pointPanel.SetActive(true);
             }
         }
+
+        //switch (points)
+        //{
+        //    case 1:
+        //        Debug.LogWarning("Baixo: " + points);
+        //        break;
+        //    case 2:
+        //    case 3:
+        //    case 4:
+        //        Debug.LogWarning("Médio: " + points);
+        //        break;
+        //    case 5:
+        //        Debug.LogWarning("Pontuação Máxima: " + points);
+        //        break;
+        //    case 0:
+        //        Debug.LogWarning("PASSOU: " + points);
+        //        break;
+        //}
+    }
+
+    public void CheckCard( GameObject currentCard)
+    {
+  
+                if (currentDisplayCard.CompareTag(currentCard.tag))
+                {
+                    points++;
+
+                    currentCard.SetActive(false);
+                    currentDisplayCard.SetActive(false);
+                    ShowCards();
+                    DisplayCards();
+                }
+                else if (currentDisplayCard.tag != currentCard.tag)
+                {
+                    Debug.LogError("Errou: " + currentDisplayCard.tag);
+                    points--;
+                    ShowCards();
+                }
     }
 
 }

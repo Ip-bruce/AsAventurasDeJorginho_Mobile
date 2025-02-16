@@ -13,11 +13,10 @@ public class CardDrop : MonoBehaviour, IDropHandler
     {
         if(eventData.pointerDrag != null)
         {
-
             currentCardTag = eventData.pointerDrag.tag;  
-            // Debug.Log(currentCardTag);
             currentCard = eventData.pointerDrag;
-            cardsManager.CheckCard(currentCardTag, currentCard);
+            currentCard.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
+            cardsManager.CheckCard( currentCard);
         }
         Debug.Log("Dropped");
     }
