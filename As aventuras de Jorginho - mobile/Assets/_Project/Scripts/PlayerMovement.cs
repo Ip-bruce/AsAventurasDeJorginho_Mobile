@@ -5,6 +5,9 @@ using UnityEngine.SceneManagement;
 
 public class PlayerMovement : MonoBehaviour
 {
+    //TestMode
+    public bool isTestModeActive = false;
+    //TestMode
     public float vel = 50;
     private float moveH,moveV;
     public Animator anim;
@@ -70,7 +73,7 @@ public class PlayerMovement : MonoBehaviour
         }
         if(other.gameObject.CompareTag("Obstacle"))
         {
-            PlayerHealth();
+            if(!isTestModeActive) PlayerHealth();
         }
         Debug.Log("Colected!!!");
     }
@@ -84,7 +87,7 @@ public class PlayerMovement : MonoBehaviour
         if(PlayerLife == 0)
         {
             LifeSprite[0].SetActive(false);
-            SceneManager.LoadScene(LoseLevel); //TODO: Change the String for the current scene;
+            SceneManager.LoadScene(LoseLevel); 
         }
         
         PlayerLife--;

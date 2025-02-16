@@ -8,11 +8,12 @@ public class LevelManager : MonoBehaviour
   
     public GameObject[] colectableObjects;
     public GameObject nestLevelDoor;
-
-
     public bool allColected = false;
 
-
+    private void Start()
+    {
+        allColected = false;
+    }
 
     public void Update()
     {
@@ -21,6 +22,7 @@ public class LevelManager : MonoBehaviour
         {
             Debug.Log("Coletados, Só Abrir o Portão");
             Destroy(nestLevelDoor);
+            PlayerMovement.colectables = 0;
         }    
     }
 
