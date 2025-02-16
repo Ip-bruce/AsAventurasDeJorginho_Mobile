@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -6,18 +5,22 @@ using UnityEngine;
 public class CardsManager : MonoBehaviour
 {
     //Variables
-    public RectTransform [] dragableCards;
-    public GameObject [] displayCards;
+    public RectTransform[] dragableCards;
+    public List<GameObject> displayCards;
+    public List<int> numbers;
     public RectTransform[] dragableCardsHolder;
     public CardDrop cardDrop;
     private int points = 0;
 
+
+
     private GameObject currentDisplayCard;
 
-    private void Start() 
+    private void Start()
     {
-        ShowCards();    
+
         DisplayCards();
+        ShowCards();
 
         cardDrop = GetComponent<CardDrop>();
     }
@@ -29,57 +32,75 @@ public class CardsManager : MonoBehaviour
         //     ShowCards();
         // }
 
-        //Win Condition
-        if(points == 5)
-        {
-            Debug.Log("Gahou!!!");
-        }
+        
+       
 
     }
 
     //Show and organize the Dragable Cards
     private void ShowCards()
     {
-         int dragableCardsQuantity = dragableCards.Length - 1; 
+        int dragableCardsQuantity = dragableCards.Length - 1;
 
-        for(int i = 0; i <= dragableCardsQuantity; i++)
+        for (int i = 0; i <= dragableCardsQuantity; i++)
         {
-            dragableCards[i].anchoredPosition = dragableCardsHolder[i].anchoredPosition;       
+            dragableCards[i].anchoredPosition = dragableCardsHolder[i].anchoredPosition;
         }
     }
 
     //Void responsable for Display the cards with the signs
     public void DisplayCards()
     {
-        for(int i = 0; i<= displayCards.Length - 1; i++)
+        if (numbers.Count > 0)
         {
-            currentDisplayCard = displayCards[Random.Range(0,displayCards.Length - 1)];
-            if(currentDisplayCard != null) currentDisplayCard.SetActive(true);
+            int theNumber = numbers[Random.Range(0, numbers.Count)];
+            numbers.Remove(theNumber);
+            
+            //currentDisplayCard = displayCards[Random.Range(0,displayCards.Count)];
 
-            if(i == 4) i = 0;   
+            currentDisplayCard = displayCards[theNumber];
+            
+            if (currentDisplayCard != null)
+            {
+                
+                currentDisplayCard.SetActive(true);
+            }
+            else
+            {
+
+                return;
+            }
+
+        }
+        else
+        {
+            Debug.LogError("Ganhou !!!!!");
         }
 
-        // (displayCards[Random.Range(0,displayCards.Length - 1)] != null) 
-        // displayCards[Random.Range(0,displayCards.Length - 1)].SetActive(true);
+
+
+
+
     }
 
 
     public void CheckCard(string currentCardTag, GameObject currentCard)
     {
 
-        Debug.Log("Check Card: " + currentCardTag);
+        int dragableCardsQuantity = dragableCards.Length - 1;
 
-         int dragableCardsQuantity = dragableCards.Length - 1; 
-
-        for(int i = 0; i <= dragableCardsQuantity; i++)
+        for (int i = 0; i <= dragableCardsQuantity; i++)
         {
-            if(displayCards[i].activeSelf)
+            if (displayCards[i].activeSelf)
             {
-                string displayCardsTag = displayCards[i].tag; 
-                if( displayCardsTag == currentCardTag)
+                string displayCardsTag = displayCards[i].tag;
+                if (displayCardsTag == currentCardTag)
                 {
-                    Destroy(currentCard);
-                    Destroy(displayCards[i]);
+
+                    currentCard.SetActive(false);
+                    displayCards[i].SetActive(false);
+                    //displayCards.Remove(displayCards[i]);
+                    //Destroy(displayCards[i]);
                     ShowCards();
                     DisplayCards();
                     points++;

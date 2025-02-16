@@ -1501,6 +1501,7 @@ MonoBehaviour:
   - {fileID: 1145823884}
   - {fileID: 1190142310}
   - {fileID: 1715224142}
+  numbers: 0000000001000000020000000300000004000000
   dragableCardsHolder:
   - {fileID: 221158516}
   - {fileID: 463238328}
@@ -1677,6 +1678,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardsManager: {fileID: 1478256489}
   currentCardTag: 
+  currentCard: {fileID: 0}
 --- !u!114 &1688562534
 MonoBehaviour:
   m_ObjectHideFlags: 0
