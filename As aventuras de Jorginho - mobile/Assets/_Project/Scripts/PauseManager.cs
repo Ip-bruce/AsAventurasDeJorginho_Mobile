@@ -25,7 +25,6 @@ public class PauseManager : MonoBehaviour
         if(Input.GetKeyDown(KeyCode.Escape))
         {
            PauseGame();
-           Debug.Log("ESC APERTADO");
         }
         //Audio Configurations
 

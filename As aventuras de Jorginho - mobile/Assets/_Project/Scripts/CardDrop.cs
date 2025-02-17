@@ -18,6 +18,6 @@ public class CardDrop : MonoBehaviour, IDropHandler
             currentCard.GetComponent<RectTransform>().anchoredPosition = GetComponent<RectTransform>().anchoredPosition;
             cardsManager.CheckCard( currentCard);
         }
-        Debug.Log("Dropped");
+        
     }
 }

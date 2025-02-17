@@ -12,25 +12,19 @@ public class CardsManager : MonoBehaviour
     public RectTransform[] dragableCardsHolder;
     public CardDrop cardDrop;
     [SerializeField] int points = 0;
+    [SerializeField] int errors = 0;
     [SerializeField] ScoreManager scoreManager;
+    private GameObject currentDisplayCard;
     //Panels
     public GameObject pointPanel;
+    //Audio
+    [SerializeField] AudioManager audioManager;
 
 
-
-    private GameObject currentDisplayCard;
 
     private void Start()
     {
-
-        //DisplayCards();
-        //ShowCards();
-
         cardDrop = GetComponent<CardDrop>();
-    }
-
-    private void Update()
-    {       
 
     }
 
@@ -54,10 +48,10 @@ public class CardsManager : MonoBehaviour
             numbers.Remove(theNumber);
 
             currentDisplayCard = displayCards[theNumber];
-            
+
             if (currentDisplayCard != null)
             {
-                
+
                 currentDisplayCard.SetActive(true);
             }
             else
@@ -69,66 +63,43 @@ public class CardsManager : MonoBehaviour
         }
         else
         {
-           Score(points);
+            Score(points);
         }
-
-
-
-
 
     }
 
 
     public void Score(int points)
     {
-        if (scoreManager != null && scoreManager.scoreImages.Count > points && pointPanel != null)
-        {
-            Image pointPanelImage = pointPanel.GetComponent<Image>();
-
-            if (pointPanelImage != null)
-            {
-                pointPanelImage.sprite = scoreManager.scoreImages[points];
-                pointPanel.SetActive(true);
-            }
-        }
-
-        //switch (points)
-        //{
-        //    case 1:
-        //        Debug.LogWarning("Baixo: " + points);
-        //        break;
-        //    case 2:
-        //    case 3:
-        //    case 4:
-        //        Debug.LogWarning("Médio: " + points);
-        //        break;
-        //    case 5:
-        //        Debug.LogWarning("Pontuação Máxima: " + points);
-        //        break;
-        //    case 0:
-        //        Debug.LogWarning("PASSOU: " + points);
-        //        break;
-        //}
+        audioManager.PlayAudio(audioManager.popupAudioClip);
+        pointPanel.SetActive(true);
+          ScoreManager.instance.SetSprite(5-errors);
+         
     }
 
-    public void CheckCard( GameObject currentCard)
+    public void CheckCard(GameObject currentCard)
     {
-  
-                if (currentDisplayCard.CompareTag(currentCard.tag))
-                {
-                    points++;
 
-                    currentCard.SetActive(false);
-                    currentDisplayCard.SetActive(false);
-                    ShowCards();
-                    DisplayCards();
-                }
-                else if (currentDisplayCard.tag != currentCard.tag)
-                {
-                    Debug.LogError("Errou: " + currentDisplayCard.tag);
-                    points--;
-                    ShowCards();
-                }
+        if (currentDisplayCard.CompareTag(currentCard.tag))
+        {
+            points++;
+            audioManager.PlayAudio(audioManager.hitAudioClip);
+            currentCard.SetActive(false);
+            currentDisplayCard.SetActive(false);
+            ShowCards();
+            DisplayCards();
+        }
+        else if (currentDisplayCard.tag != currentCard.tag)
+        {
+            audioManager.PlayAudio(audioManager.missAudioClip);
+
+            errors++;
+            if (errors > 5)
+            {
+                errors = 5;
+            }
+            ShowCards();
+        }
     }
 
 }

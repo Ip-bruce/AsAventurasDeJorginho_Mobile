@@ -19,13 +19,11 @@ public class CardDragDrop : MonoBehaviour,IPointerDownHandler, IBeginDragHandler
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-         Debug.Log("Begin Drag");
          canvasGroup.alpha = .6f;
          canvasGroup.blocksRaycasts = false;
     }
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("End Drag");
         //Move the object along with the mouse
         canvasGroup.alpha = 1;
          canvasGroup.blocksRaycasts = true;
@@ -37,7 +35,6 @@ public class CardDragDrop : MonoBehaviour,IPointerDownHandler, IBeginDragHandler
     
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag!!");
         rectTransform.anchoredPosition += eventData.delta / canvas.scaleFactor;
     }
 

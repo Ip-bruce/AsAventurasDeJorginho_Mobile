@@ -20,7 +20,6 @@ public class LevelManager : MonoBehaviour
         AllCollected();
         if(allColected)
         {
-            Debug.Log("Coletados, Só Abrir o Portão");
             Destroy(nestLevelDoor);
             PlayerMovement.colectables = 0;
         }    
@@ -28,7 +27,14 @@ public class LevelManager : MonoBehaviour
 
     public void NextLevel(string SceneName )
     {
-        SceneManager.LoadScene(SceneName);
+        if (Time.timeScale < 1)
+        {
+            Time.timeScale = 1;
+            
+            SceneManager.LoadScene(SceneName);
+        }
+            SceneManager.LoadScene(SceneName);
+
     }
 
     void AllCollected()

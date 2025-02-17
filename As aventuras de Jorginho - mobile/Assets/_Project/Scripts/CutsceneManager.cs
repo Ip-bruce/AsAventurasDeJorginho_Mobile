@@ -44,7 +44,6 @@ public class CutsceneManager : MonoBehaviour
         if (isInScene)
         {
             timer += Time.deltaTime;
-            Debug.Log("time is:" + timer );
         } 
 
         if(timer >= TimeInScene)
@@ -54,7 +53,6 @@ public class CutsceneManager : MonoBehaviour
             
             if(index == images.Length - 1 )
             {
-                Debug.Log("Acabou as images");
                 isInScene = false;
                 button.SetActive(true);
             }

@@ -75,12 +75,10 @@ public class PlayerMovement : MonoBehaviour
         {
             if(!isTestModeActive) PlayerHealth();
         }
-        Debug.Log("Colected!!!");
     }
 
     private void PlayerHealth()
     {
-        Debug.Log("Health");
 
         if(PlayerLife == 2) LifeSprite[2].SetActive(false);
         if(PlayerLife == 1) LifeSprite[1].SetActive(false);
