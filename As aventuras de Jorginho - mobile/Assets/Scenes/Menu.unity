@@ -135,8 +135,9 @@ GameObject:
   - component: {fileID: 68739251}
   - component: {fileID: 68739250}
   - component: {fileID: 68739249}
+  - component: {fileID: 68739252}
   m_Layer: 5
-  m_Name: MemorizeLibras_Btn
+  m_Name: Bonus
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -255,6 +256,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 68739247}
   m_CullTransparentMesh: 1
+--- !u!114 &68739252
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 68739247}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb042ccdf11fab46b1a3a2550ef4541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogar: {fileID: 32900000, guid: 505d791bb7a6d3541bb5e9feebddc2e1, type: 3}
+  creditos: {fileID: 32900000, guid: 802836113b52e2d46857d5a38f0e15c8, type: 3}
+  voltar: {fileID: 32900000, guid: ea518898e62fbac4b913be9aca705463, type: 3}
+  sair: {fileID: 32900000, guid: c7a7551ccccb6554683651e5b4769aa2, type: 3}
+  macaco: {fileID: 32900000, guid: 97d5caae3b05b8446b72c9d757cd65ab, type: 3}
+  galinha: {fileID: 32900000, guid: 6f5397a33a8966f489473fa4d800e650, type: 3}
+  leao: {fileID: 32900000, guid: 416d09a7f496ca4489afda61cdbfb709, type: 3}
+  peixe: {fileID: 32900000, guid: 103609e905ffccd48a5457014e1bc5e1, type: 3}
+  girafa: {fileID: 32900000, guid: 3dde27d7fda150d4990e0faf4a80e89a, type: 3}
+  bonus: {fileID: 32900000, guid: 25811a870ef89014aba91f5e9a085201, type: 3}
+  videoPlayer: {fileID: 1188809595}
+  vLibrasPanel: {fileID: 1801368760}
 --- !u!1 &113459655
 GameObject:
   m_ObjectHideFlags: 0
@@ -342,8 +367,9 @@ GameObject:
   - component: {fileID: 405964825}
   - component: {fileID: 405964824}
   - component: {fileID: 405964823}
+  - component: {fileID: 405964826}
   m_Layer: 5
-  m_Name: Play_btn
+  m_Name: Jogar
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -475,6 +501,158 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 405964821}
   m_CullTransparentMesh: 1
+--- !u!114 &405964826
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 405964821}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb042ccdf11fab46b1a3a2550ef4541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogar: {fileID: 32900000, guid: 505d791bb7a6d3541bb5e9feebddc2e1, type: 3}
+  creditos: {fileID: 32900000, guid: 802836113b52e2d46857d5a38f0e15c8, type: 3}
+  voltar: {fileID: 32900000, guid: ea518898e62fbac4b913be9aca705463, type: 3}
+  sair: {fileID: 32900000, guid: c7a7551ccccb6554683651e5b4769aa2, type: 3}
+  macaco: {fileID: 32900000, guid: 97d5caae3b05b8446b72c9d757cd65ab, type: 3}
+  galinha: {fileID: 32900000, guid: 6f5397a33a8966f489473fa4d800e650, type: 3}
+  leao: {fileID: 32900000, guid: 416d09a7f496ca4489afda61cdbfb709, type: 3}
+  peixe: {fileID: 32900000, guid: 103609e905ffccd48a5457014e1bc5e1, type: 3}
+  girafa: {fileID: 32900000, guid: 3dde27d7fda150d4990e0faf4a80e89a, type: 3}
+  bonus: {fileID: 32900000, guid: 25811a870ef89014aba91f5e9a085201, type: 3}
+  videoPlayer: {fileID: 1188809595}
+  vLibrasPanel: {fileID: 1801368760}
+--- !u!1 &468144416
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 468144417}
+  - component: {fileID: 468144419}
+  - component: {fileID: 468144418}
+  m_Layer: 5
+  m_Name: RawImage
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &468144417
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468144416}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3.2449, y: 3.2449, z: 3.2449}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1801368763}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 50, y: 75.9551}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &468144418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468144416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1344c3c82d62a2a41a3576d8abb8e3ea, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 0
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 0
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Texture: {fileID: 8400000, guid: eb63a3088cbbd6941922d72e404a7df4, type: 2}
+  m_UVRect:
+    serializedVersion: 2
+    x: 0.37
+    y: 0.11
+    width: 0.28
+    height: 0.752
+--- !u!222 &468144419
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 468144416}
+  m_CullTransparentMesh: 1
+--- !u!1 &480686454
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 480686456}
+  - component: {fileID: 480686455}
+  m_Layer: 0
+  m_Name: VlibrasManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &480686455
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480686454}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb042ccdf11fab46b1a3a2550ef4541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogar: {fileID: 32900000, guid: 505d791bb7a6d3541bb5e9feebddc2e1, type: 3}
+  creditos: {fileID: 32900000, guid: 802836113b52e2d46857d5a38f0e15c8, type: 3}
+  voltar: {fileID: 32900000, guid: ea518898e62fbac4b913be9aca705463, type: 3}
+  sair: {fileID: 32900000, guid: c7a7551ccccb6554683651e5b4769aa2, type: 3}
+  macaco: {fileID: 32900000, guid: 97d5caae3b05b8446b72c9d757cd65ab, type: 3}
+  galinha: {fileID: 32900000, guid: 6f5397a33a8966f489473fa4d800e650, type: 3}
+  leao: {fileID: 32900000, guid: 416d09a7f496ca4489afda61cdbfb709, type: 3}
+  peixe: {fileID: 32900000, guid: 103609e905ffccd48a5457014e1bc5e1, type: 3}
+  girafa: {fileID: 32900000, guid: 3dde27d7fda150d4990e0faf4a80e89a, type: 3}
+  bonus: {fileID: 32900000, guid: 25811a870ef89014aba91f5e9a085201, type: 3}
+  videoPlayer: {fileID: 1188809595}
+  vLibrasPanel: {fileID: 1801368760}
+--- !u!4 &480686456
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 480686454}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 37, y: 1027, z: -10.376548}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -758,8 +936,9 @@ GameObject:
   - component: {fileID: 600865880}
   - component: {fileID: 600865879}
   - component: {fileID: 600865878}
+  - component: {fileID: 600865881}
   m_Layer: 5
-  m_Name: Credits_btn
+  m_Name: Creditos
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -879,6 +1058,30 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 600865876}
   m_CullTransparentMesh: 1
+--- !u!114 &600865881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 600865876}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb042ccdf11fab46b1a3a2550ef4541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogar: {fileID: 32900000, guid: 505d791bb7a6d3541bb5e9feebddc2e1, type: 3}
+  creditos: {fileID: 32900000, guid: 802836113b52e2d46857d5a38f0e15c8, type: 3}
+  voltar: {fileID: 32900000, guid: ea518898e62fbac4b913be9aca705463, type: 3}
+  sair: {fileID: 32900000, guid: c7a7551ccccb6554683651e5b4769aa2, type: 3}
+  macaco: {fileID: 32900000, guid: 97d5caae3b05b8446b72c9d757cd65ab, type: 3}
+  galinha: {fileID: 32900000, guid: 6f5397a33a8966f489473fa4d800e650, type: 3}
+  leao: {fileID: 32900000, guid: 416d09a7f496ca4489afda61cdbfb709, type: 3}
+  peixe: {fileID: 32900000, guid: 103609e905ffccd48a5457014e1bc5e1, type: 3}
+  girafa: {fileID: 32900000, guid: 3dde27d7fda150d4990e0faf4a80e89a, type: 3}
+  bonus: {fileID: 32900000, guid: 25811a870ef89014aba91f5e9a085201, type: 3}
+  videoPlayer: {fileID: 1188809595}
+  vLibrasPanel: {fileID: 1801368760}
 --- !u!1 &619394800
 GameObject:
   m_ObjectHideFlags: 0
@@ -1017,8 +1220,9 @@ GameObject:
   - component: {fileID: 999075349}
   - component: {fileID: 999075348}
   - component: {fileID: 999075347}
+  - component: {fileID: 999075350}
   m_Layer: 5
-  m_Name: Exit_btn (1)
+  m_Name: Sair
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1138,6 +1342,102 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 999075345}
   m_CullTransparentMesh: 1
+--- !u!114 &999075350
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 999075345}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6fb042ccdf11fab46b1a3a2550ef4541, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  jogar: {fileID: 32900000, guid: 505d791bb7a6d3541bb5e9feebddc2e1, type: 3}
+  creditos: {fileID: 32900000, guid: 802836113b52e2d46857d5a38f0e15c8, type: 3}
+  voltar: {fileID: 32900000, guid: ea518898e62fbac4b913be9aca705463, type: 3}
+  sair: {fileID: 32900000, guid: c7a7551ccccb6554683651e5b4769aa2, type: 3}
+  macaco: {fileID: 32900000, guid: 97d5caae3b05b8446b72c9d757cd65ab, type: 3}
+  galinha: {fileID: 32900000, guid: 6f5397a33a8966f489473fa4d800e650, type: 3}
+  leao: {fileID: 32900000, guid: 416d09a7f496ca4489afda61cdbfb709, type: 3}
+  peixe: {fileID: 32900000, guid: 103609e905ffccd48a5457014e1bc5e1, type: 3}
+  girafa: {fileID: 32900000, guid: 3dde27d7fda150d4990e0faf4a80e89a, type: 3}
+  bonus: {fileID: 32900000, guid: 25811a870ef89014aba91f5e9a085201, type: 3}
+  videoPlayer: {fileID: 1188809595}
+  vLibrasPanel: {fileID: 1801368760}
+--- !u!1 &1188809593
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1188809594}
+  - component: {fileID: 1188809595}
+  m_Layer: 5
+  m_Name: Video Player
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &1188809594
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188809593}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1801368763}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 213.54, y: 207.41}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!328 &1188809595
+VideoPlayer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1188809593}
+  m_Enabled: 1
+  m_VideoClip: {fileID: 0}
+  m_TargetCameraAlpha: 1
+  m_TargetCamera3DLayout: 0
+  m_TargetCamera: {fileID: 0}
+  m_TargetTexture: {fileID: 8400000, guid: eb63a3088cbbd6941922d72e404a7df4, type: 2}
+  m_TimeReference: 0
+  m_TargetMaterialRenderer: {fileID: 0}
+  m_TargetMaterialProperty: <noninit>
+  m_RenderMode: 2
+  m_AspectRatio: 2
+  m_DataSource: 0
+  m_TimeUpdateMode: 2
+  m_PlaybackSpeed: 1
+  m_AudioOutputMode: 0
+  m_TargetAudioSources:
+  - {fileID: 0}
+  m_DirectAudioVolumes:
+  - 1
+  m_Url: 
+  m_EnabledAudioTracks: 01
+  m_DirectAudioMutes: 00
+  m_ControlledAudioTrackCount: 1
+  m_PlayOnAwake: 1
+  m_SkipOnDrop: 1
+  m_Looping: 0
+  m_WaitForFirstFrame: 1
+  m_FrameReadyEventEnabled: 0
+  m_VideoShaders: []
 --- !u!1 &1258508350
 GameObject:
   m_ObjectHideFlags: 0
@@ -1596,6 +1896,83 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1441601340}
   m_CullTransparentMesh: 1
+--- !u!1 &1801368760
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1801368763}
+  - component: {fileID: 1801368762}
+  - component: {fileID: 1801368761}
+  m_Layer: 5
+  m_Name: V Libras Panel
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!114 &1801368761
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801368760}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.015686275, g: 0.32941177, b: 0.6117647, a: 1}
+  m_RaycastTarget: 1
+  m_RaycastPadding: {x: 0, y: 0, z: 0, w: 0}
+  m_Maskable: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+  m_Sprite: {fileID: 10907, guid: 0000000000000000f000000000000000, type: 0}
+  m_Type: 2
+  m_PreserveAspect: 0
+  m_FillCenter: 0
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 0.73
+--- !u!222 &1801368762
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801368760}
+  m_CullTransparentMesh: 1
+--- !u!224 &1801368763
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1801368760}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 1188809594}
+  - {fileID: 468144417}
+  m_Father: {fileID: 1973694080}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 0}
+  m_AnchorMax: {x: 1, y: 1}
+  m_AnchoredPosition: {x: 312.93744, y: -5.5029297}
+  m_SizeDelta: {x: -630.6749, y: -190.8384}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1876088523
 GameObject:
   m_ObjectHideFlags: 0
@@ -1964,6 +2341,7 @@ RectTransform:
   - {fileID: 600865877}
   - {fileID: 999075346}
   - {fileID: 68739248}
+  - {fileID: 1801368763}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -1982,3 +2360,4 @@ SceneRoots:
   - {fileID: 639580630}
   - {fileID: 1314668447}
   - {fileID: 1258508352}
+  - {fileID: 480686456}
