@@ -20,7 +20,7 @@ public class VlibrasManager : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     [Header("Video Player")]
     public VideoPlayer videoPlayer;
-    private bool isVlibrasPanel = false;
+    [SerializeField]private bool isVlibrasPanel = false;
 
     [Header ("Video Player Panel")]
     public GameObject vLibrasPanel;
@@ -39,20 +39,49 @@ public class VlibrasManager : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     public void OnPointerEnter(PointerEventData eventData)
     {
-        isVlibrasPanel = true;
-        vLibrasPanel.SetActive(true);
+       // VlibrasPanelView();
+             vLibrasPanel.SetActive(true);
+
         VideoManager();
     }
 
     public void OnPointerExit(PointerEventData eventData)
     {
-        if (isVlibrasPanel)
-        {
+
             videoPlayer.Stop();
-            isVlibrasPanel = false;
             vLibrasPanel.SetActive(false);
-        }
+
     }
+
+
+    // public void VlibrasSwitch()
+    // {
+    //     if(isVlibrasPanel == false)
+    //     {
+
+    //         isVlibrasPanel = true;
+    //          vLibrasPanel.SetActive(true);
+    //     }
+    //     else
+    //     {
+    //         isVlibrasPanel = false;
+    //         vLibrasPanel.SetActive(false);
+    //     }       
+    // }
+
+    // public void VlibrasPanelView()
+    // {
+    //     if(isVlibrasPanel == true)
+    //     {
+    //          vLibrasPanel.SetActive(true);
+    //     }
+    //     else
+    //     {
+    //         vLibrasPanel.SetActive(false);
+    //     }
+    // } 
+    
+
 
     public void VideoManager()
     {

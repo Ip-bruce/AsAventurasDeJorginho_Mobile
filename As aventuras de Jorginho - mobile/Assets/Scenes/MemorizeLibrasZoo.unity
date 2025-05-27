@@ -499,6 +499,7 @@ MonoBehaviour:
   girafa: {fileID: 0}
   bonus: {fileID: 0}
   videoPlayer: {fileID: 571941072}
+  isVlibrasPanel: 0
   vLibrasPanel: {fileID: 475999741}
 --- !u!1 &221158514
 GameObject:
@@ -1903,6 +1904,7 @@ MonoBehaviour:
   girafa: {fileID: 32900000, guid: 3dde27d7fda150d4990e0faf4a80e89a, type: 3}
   bonus: {fileID: 32900000, guid: 25811a870ef89014aba91f5e9a085201, type: 3}
   videoPlayer: {fileID: 571941072}
+  isVlibrasPanel: 1
   vLibrasPanel: {fileID: 475999741}
 --- !u!4 &1150547494
 Transform:
@@ -3185,6 +3187,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01ad1c728b9cecd4290764a91ac59739, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  VlibrasPanel: {fileID: 475999741}
   panel: {fileID: 300261216}
   menuPanel: {fileID: 300261220}
   panelMemorize: {fileID: 547214270}
@@ -3347,6 +3350,7 @@ MonoBehaviour:
   girafa: {fileID: 0}
   bonus: {fileID: 0}
   videoPlayer: {fileID: 571941072}
+  isVlibrasPanel: 0
   vLibrasPanel: {fileID: 475999741}
 --- !u!1 &1703163255
 GameObject:

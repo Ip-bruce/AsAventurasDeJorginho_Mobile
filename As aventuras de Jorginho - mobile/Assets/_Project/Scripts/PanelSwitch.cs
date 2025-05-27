@@ -2,6 +2,7 @@ using UnityEngine;
 using System.Collections;
 public class PanelSwitch : MonoBehaviour
 {
+    public GameObject VlibrasPanel;
     [SerializeField] GameObject panel;
     public CanvasGroup menuPanel;
     [SerializeField] GameObject panelMemorize;
@@ -11,42 +12,15 @@ public class PanelSwitch : MonoBehaviour
     
     public void PlayGame()
     {
-        //canStart = true;
-        //activate();
+       
         openClose();
         StartCoroutine(Routine());
-        
-        //Invoke(nameof(Deactivate), 5f);
+       
         
         
     }
 
-    //private void Update()
-    //{
-    //    Debug.Log("Antes");
-    //    if (!canStart)
-    //    {
-    //        return;
-    //    }
-    //    timer += 1;
-    //    Debug.Log("depois");
-    //    if (timer >= 200)
-    //    {
-    //        canStart = false;
-    //        Deactivate();
-    //    }
-    //}
-
-    //private void activate()
-    //{
-    //    panelMemorize.SetActive(true);
-    //}
-    //void Deactivate()
-    //{
-    //    panelMemorize.SetActive(false);
-    //    cardsManager.DisplayCards();
-    //    cardsManager.ShowCards();
-    //}
+  
 
     IEnumerator Routine()
     {
@@ -54,6 +28,7 @@ public class PanelSwitch : MonoBehaviour
         yield return new WaitForSecondsRealtime(5);
 
         panelMemorize.SetActive(false);
+        VlibrasPanel.SetActive(true);
         cardsManager.DisplayCards();
         cardsManager.ShowCards();
     }

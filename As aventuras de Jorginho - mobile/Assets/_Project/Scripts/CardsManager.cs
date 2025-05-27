@@ -6,7 +6,6 @@ using System.Collections;
 //Manages the all the logic of the cards
 public class CardsManager : MonoBehaviour
 {
-
     public VlibrasManager vlibrasManager;
 
     //Variables
@@ -29,6 +28,7 @@ public class CardsManager : MonoBehaviour
     private void Start()
     {
         cardDrop = GetComponent<CardDrop>();
+        
     }
 
     //Show and organize the Dragable Cards
