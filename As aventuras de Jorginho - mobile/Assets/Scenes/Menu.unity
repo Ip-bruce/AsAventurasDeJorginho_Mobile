@@ -597,62 +597,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 468144416}
   m_CullTransparentMesh: 1
---- !u!1 &480686454
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 480686456}
-  - component: {fileID: 480686455}
-  m_Layer: 0
-  m_Name: VlibrasManager
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &480686455
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480686454}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 6fb042ccdf11fab46b1a3a2550ef4541, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  jogar: {fileID: 32900000, guid: 505d791bb7a6d3541bb5e9feebddc2e1, type: 3}
-  creditos: {fileID: 32900000, guid: 802836113b52e2d46857d5a38f0e15c8, type: 3}
-  voltar: {fileID: 32900000, guid: ea518898e62fbac4b913be9aca705463, type: 3}
-  sair: {fileID: 32900000, guid: c7a7551ccccb6554683651e5b4769aa2, type: 3}
-  macaco: {fileID: 32900000, guid: 97d5caae3b05b8446b72c9d757cd65ab, type: 3}
-  galinha: {fileID: 32900000, guid: 6f5397a33a8966f489473fa4d800e650, type: 3}
-  leao: {fileID: 32900000, guid: 416d09a7f496ca4489afda61cdbfb709, type: 3}
-  peixe: {fileID: 32900000, guid: 103609e905ffccd48a5457014e1bc5e1, type: 3}
-  girafa: {fileID: 32900000, guid: 3dde27d7fda150d4990e0faf4a80e89a, type: 3}
-  bonus: {fileID: 32900000, guid: 25811a870ef89014aba91f5e9a085201, type: 3}
-  videoPlayer: {fileID: 1188809595}
-  vLibrasPanel: {fileID: 1801368760}
---- !u!4 &480686456
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 480686454}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 37, y: 1027, z: -10.376548}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -2360,4 +2304,3 @@ SceneRoots:
   - {fileID: 639580630}
   - {fileID: 1314668447}
   - {fileID: 1258508352}
-  - {fileID: 480686456}

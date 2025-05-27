@@ -1,10 +1,14 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using System.Collections;
 
 //Manages the all the logic of the cards
 public class CardsManager : MonoBehaviour
 {
+
+    public VlibrasManager vlibrasManager;
+
     //Variables
     public RectTransform[] dragableCards;
     public List<GameObject> displayCards;
@@ -25,7 +29,6 @@ public class CardsManager : MonoBehaviour
     private void Start()
     {
         cardDrop = GetComponent<CardDrop>();
-
     }
 
     //Show and organize the Dragable Cards
@@ -67,10 +70,12 @@ public class CardsManager : MonoBehaviour
         }
 
     }
+    
 
 
     public void Score(int points)
     {
+        
         audioManager.PlayAudio(audioManager.popupAudioClip);
         pointPanel.SetActive(true);
           ScoreManager.instance.SetSprite(5-errors);
@@ -82,8 +87,10 @@ public class CardsManager : MonoBehaviour
 
         if (currentDisplayCard.CompareTag(currentCard.tag))
         {
-            points++;
             audioManager.PlayAudio(audioManager.hitAudioClip);
+            PlayLibras(currentCard.tag);
+            Debug.Log("Tag de Carta Atual: "+currentCard.tag);
+            points++;
             currentCard.SetActive(false);
             currentDisplayCard.SetActive(false);
             ShowCards();
@@ -101,5 +108,12 @@ public class CardsManager : MonoBehaviour
             ShowCards();
         }
     }
+
+    public void PlayLibras(string CardName)
+    {
+        vlibrasManager.VideoManagerAnimal(CardName);    
+    }
+
+    
 
 }
