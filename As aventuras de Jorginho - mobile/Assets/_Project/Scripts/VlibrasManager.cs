@@ -25,6 +25,12 @@ public class VlibrasManager : MonoBehaviour, IPointerEnterHandler, IPointerExitH
     [Header ("Video Player Panel")]
     public GameObject vLibrasPanel;
 
+    [Header("LevelManager")]
+    public LevelManager levelManager;  
+
+    [Header("PausePanel")]
+    public GameObject pausePanel;
+
 
     void Start()
     {
@@ -53,21 +59,22 @@ public class VlibrasManager : MonoBehaviour, IPointerEnterHandler, IPointerExitH
 
     }
 
+    public void Update()
+    {
+        if(levelManager.colectableObjects[0].activeSelf == false)
+        {
+            vLibrasPanel.SetActive(true);
+            VideoClip selectedClip = null;
+            selectedClip = jogar;
+            videoPlayer.Play();
+        }
 
-    // public void VlibrasSwitch()
-    // {
-    //     if(isVlibrasPanel == false)
-    //     {
+        if(pausePanel.activeSelf == false)
+        {
+            vLibrasPanel.SetActive(false);
+        }
+    }
 
-    //         isVlibrasPanel = true;
-    //          vLibrasPanel.SetActive(true);
-    //     }
-    //     else
-    //     {
-    //         isVlibrasPanel = false;
-    //         vLibrasPanel.SetActive(false);
-    //     }       
-    // }
 
     // public void VlibrasPanelView()
     // {
